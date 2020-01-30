@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>OpenFOAM学习笔记——icoReactingMultiphaseInterFoam</title>
+    <link href="/2020/01/30/OpenFOAM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94icoReactingMultiphaseInterFoam/"/>
+    <url>/2020/01/30/OpenFOAM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94icoReactingMultiphaseInterFoam/</url>
+    
+    <content type="html"><![CDATA[<h1 id="OpenFOAM学习笔记——icoReactingMultiphaseInterFoam"><a href="#OpenFOAM学习笔记——icoReactingMultiphaseInterFoam" class="headerlink" title="OpenFOAM学习笔记——icoReactingMultiphaseInterFoam"></a>OpenFOAM学习笔记——icoReactingMultiphaseInterFoam</h1><h2 id="2DFilmBoiling"><a href="#2DFilmBoiling" class="headerlink" title="2DFilmBoiling"></a>2DFilmBoiling</h2><h3 id="膜态沸腾（模拟Leidenfrost-Effect）时膜的破碎问题"><a href="#膜态沸腾（模拟Leidenfrost-Effect）时膜的破碎问题" class="headerlink" title="膜态沸腾（模拟Leidenfrost Effect）时膜的破碎问题"></a>膜态沸腾（模拟Leidenfrost Effect）时膜的破碎问题</h3><p><img src="/img/2DFilmBoiling/2DFilmBoiling1.png" srcset="/img/loading.gif" alt="2DFilmBoiling1"></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>OpenFOAM学习笔记</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>OpenFOAM学习笔记——blockMesh</title>
     <link href="/2020/01/28/OpenFOAM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94blockMesh/"/>
     <url>/2020/01/28/OpenFOAM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94blockMesh/</url>
