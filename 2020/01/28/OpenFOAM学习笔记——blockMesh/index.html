@@ -172,7 +172,8 @@
       <div class="py-5 z-depth-3" id="board">
         <div class="post-content mx-auto" id="post">
           <div class="markdown-body">
-            <h1 id="OpenFOAM学习笔记——blockMesh"><a href="#OpenFOAM学习笔记——blockMesh" class="headerlink" title="OpenFOAM学习笔记——blockMesh"></a>OpenFOAM学习笔记——blockMesh</h1><h2 id="语句blockMesh"><a href="#语句blockMesh" class="headerlink" title="语句blockMesh"></a>语句<code>blockMesh</code></h2><pre><code class="c++">blockMesh [-dict dictionary] [-case dir] [-blockTopology] [-region name] [-help]</code></pre>
+            <h1 id="OpenFOAM学习笔记——blockMesh"><a href="#OpenFOAM学习笔记——blockMesh" class="headerlink" title="OpenFOAM学习笔记——blockMesh"></a>OpenFOAM学习笔记——blockMesh</h1><h2 id="语句blockMesh"><a href="#语句blockMesh" class="headerlink" title="语句blockMesh"></a>语句<code>blockMesh</code></h2><pre><code class="lang-c++">blockMesh [-dict dictionary] [-case dir] [-blockTopology] [-region name] [-help]
+</code></pre>
 <ul>
 <li><code>blockMesh</code>不可以并行运行</li>
 <li>需要的文件：<ul>
@@ -181,7 +182,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="示例文件"><a href="#示例文件" class="headerlink" title="示例文件"></a>示例文件</h2><pre><code class="c++">/*--------------------------------*- C++ -*----------------------------------*\
+<h2 id="示例文件"><a href="#示例文件" class="headerlink" title="示例文件"></a>示例文件</h2><pre><code class="lang-c++">/*--------------------------------*- C++ -*----------------------------------*\
 | =========                 |                                                 |
 | \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
 |  \\    /   O peration     | Version:  v1806                                 |
@@ -274,46 +275,50 @@ mergePatchPairs
 // ************************************************************************* //
 </code></pre>
 <p>以上文件所定义的几何形状如下：</p>
-<p><img src="/img/OpenFOAM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94blockMesh-1.jpeg" srcset="/img/loading.gif" alt="OpenFOAM学习笔记——blockMesh-1"></p>
-<h2 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h2><table>
+<p><img src="/img/OpenFOAM学习笔记——blockMesh-1.jpeg" srcset="/img/loading.gif" alt="OpenFOAM学习笔记——blockMesh-1"></p>
+<h2 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h2><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="center">关键词</th>
-<th align="center">描述</th>
-<th align="center">范例</th>
+<th style="text-align:center">关键词</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">范例</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">scale</td>
-<td align="center">缩放系数</td>
-<td align="center"><code>0.001</code>，缩放为mm</td>
+<tbody>
+<tr>
+<td style="text-align:center">scale</td>
+<td style="text-align:center">缩放系数</td>
+<td style="text-align:center"><code>0.001</code>，缩放为mm</td>
 </tr>
 <tr>
-<td align="center">verticies</td>
-<td align="center">点位置列表</td>
-<td align="center"><code>(0 0 0)</code></td>
+<td style="text-align:center">verticies</td>
+<td style="text-align:center">点位置列表</td>
+<td style="text-align:center"><code>(0 0 0)</code></td>
 </tr>
 <tr>
-<td align="center">edges</td>
-<td align="center">用于指定 arc 以及 spline 边</td>
-<td align="center"><code>arc 1 4 (0.939 0.342 -0.5)</code></td>
+<td style="text-align:center">edges</td>
+<td style="text-align:center">用于指定 arc 以及 spline 边</td>
+<td style="text-align:center"><code>arc 1 4 (0.939 0.342 -0.5)</code></td>
 </tr>
 <tr>
-<td align="center">blocks</td>
-<td align="center">通过有序的点定义，以及每个方向的网格数量</td>
-<td align="center"><code>hex (0 1 2 3 4 5 6 7)  (10 10 1) simpleGrading (1 2 3)</code></td>
+<td style="text-align:center">blocks</td>
+<td style="text-align:center">通过有序的点定义，以及每个方向的网格数量</td>
+<td style="text-align:center"><code>hex (0 1 2 3 4 5 6 7)  (10 10 1) simpleGrading (1 2 3)</code></td>
 </tr>
 <tr>
-<td align="center">boundary</td>
-<td align="center">边界定义列表</td>
-<td align="center">见上示例代码</td>
+<td style="text-align:center">boundary</td>
+<td style="text-align:center">边界定义列表</td>
+<td style="text-align:center">见上示例代码</td>
 </tr>
 <tr>
-<td align="center">mergePatchParies</td>
-<td align="center">需要合并的 patches 列表</td>
-<td align="center">详见<a href="https://www.jianguoyun.com/p/Db9X08cQ9s3ZBhjMtpwC" target="_blank" rel="noopener">OpenFOAM用户指南</a></td>
+<td style="text-align:center">mergePatchParies</td>
+<td style="text-align:center">需要合并的 patches 列表</td>
+<td style="text-align:center">详见<a href="https://www.jianguoyun.com/p/Db9X08cQ9s3ZBhjMtpwC" target="_blank" rel="noopener">OpenFOAM用户指南</a></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h2 id="边界boundary"><a href="#边界boundary" class="headerlink" title="边界boundary"></a>边界boundary</h2><p>如果用户没有在 boundary 中指定某些面信息，blockMesh 默认它们为 <code>defaultFaces</code>，类型为<code>empty</code>。这意味着是一个 2D 的几何，如果用户知道 blockMesh 会收集省略的面信息并把他们指定为 <code>empty</code>，它就可以省略这部分面定义。</p>
 <ul>
 <li><p><code>type</code>关键词指定类型</p>
@@ -322,42 +327,46 @@ mergePatchPairs
 </li>
 </ul>
 <p>基本的<code>type</code>类型：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">type类型</th>
-<th align="center">描述</th>
+<th style="text-align:center">type类型</th>
+<th style="text-align:center">描述</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center"><code>patch</code></td>
-<td align="center">一般边界条件</td>
+<tbody>
+<tr>
+<td style="text-align:center"><code>patch</code></td>
+<td style="text-align:center">一般边界条件</td>
 </tr>
 <tr>
-<td align="center"><code>symmetryPlane</code></td>
-<td align="center">对称边界条件</td>
+<td style="text-align:center"><code>symmetryPlane</code></td>
+<td style="text-align:center">对称边界条件</td>
 </tr>
 <tr>
-<td align="center"><code>empty</code></td>
-<td align="center">空，用于2d case</td>
+<td style="text-align:center"><code>empty</code></td>
+<td style="text-align:center">空，用于2d case</td>
 </tr>
 <tr>
-<td align="center"><code>wedge</code></td>
-<td align="center">轴对称边界条件</td>
+<td style="text-align:center"><code>wedge</code></td>
+<td style="text-align:center">轴对称边界条件</td>
 </tr>
 <tr>
-<td align="center"><code>cyclic</code></td>
-<td align="center">-</td>
+<td style="text-align:center"><code>cyclic</code></td>
+<td style="text-align:center">-</td>
 </tr>
 <tr>
-<td align="center"><code>wall</code></td>
-<td align="center">fixed wall</td>
+<td style="text-align:center"><code>wall</code></td>
+<td style="text-align:center">fixed wall</td>
 </tr>
 <tr>
-<td align="center"><code>processor</code></td>
-<td align="center">处理器定义的边界条件，一般用于并行计算自动生成</td>
+<td style="text-align:center"><code>processor</code></td>
+<td style="text-align:center">处理器定义的边界条件，一般用于并行计算自动生成</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 
             <hr>
           </div>
