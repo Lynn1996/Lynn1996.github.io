@@ -185,7 +185,7 @@
 <p>参考来源：<a href="https://www.openfoam.com/documentation/guides/latest/man/icoReactingMultiphaseInterFoam.html" target="_blank" rel="noopener">https://www.openfoam.com/documentation/guides/latest/man/icoReactingMultiphaseInterFoam.html</a></p>
 <h2 id="官方tutorial"><a href="#官方tutorial" class="headerlink" title="官方tutorial"></a>官方tutorial</h2><p><img src="/img/2DFilmBoiling/anime2.gif" srcset="/img/loading.gif" alt="anime2"></p>
 <h1 id="filmBoiling-2d-Case建立"><a href="#filmBoiling-2d-Case建立" class="headerlink" title="filmBoiling_2d Case建立"></a>filmBoiling_2d Case建立</h1><h2 id="Mesh的建立"><a href="#Mesh的建立" class="headerlink" title="Mesh的建立"></a>Mesh的建立</h2><p><img src="/img/2DFilmBoiling/schematic.png" srcset="/img/loading.gif" alt="schematic"></p>
-<p>Schematic diagram of problem geometry and boundary conditions^[1]^.</p>
+<p>Schematic diagram of problem geometry and boundary conditions$^{[1]}$.</p>
 <hr>
 <p>其中：λ~0~ 为瑞利-泰勒不稳定性（Rayleigh-Taylor instability）的波长，通过如下公式计算：</p>
 <script type="math/tex; mode=display">
@@ -196,7 +196,7 @@
 <p>水的临界压力计算：<a href="https://www.engineeringtoolbox.com/water-vapor-saturation-pressure-d_599.html" target="_blank" rel="noopener">https://www.engineeringtoolbox.com/water-vapor-saturation-pressure-d_599.html</a></p>
 <p><a href="https://baike.baidu.com/item/%E4%B8%B4%E7%95%8C%E7%8A%B6%E6%80%81/22830" target="_blank" rel="noopener">临界状态</a>（来源：百度百科）：使物质由气态变为液态的最高温度叫临界温度。每种物质都有一个特定的温度，在这个温度以上，无论怎样增大压力，气态物质都不会液化，这个温度就是临界温度，此时的压力为对应当前温度的<a href="https://baike.baidu.com/item/%E9%A5%B1%E5%92%8C%E8%92%B8%E6%B0%94%E5%8E%8B" target="_blank" rel="noopener">饱和蒸气压</a>，也被称为临界温度。</p>
 </blockquote>
-<p>此时的水和饱和蒸汽的物理属性如下^[1]^：</p>
+<p>此时的水和饱和蒸汽的物理属性如下$^{[1]}$：</p>
 <p><img src="/img/2DFilmBoiling/临界状态水的物理性质.png" srcset="/img/loading.gif" alt="临界状态水的物理性质"></p>
 <p>文件中需要设置<code>equationOfState</code>状态方程，本模拟中考虑水蒸气为理想气体，指定为<code>incompressiblePerfectGas</code>不可压缩理想气体，密度$\rho$采用以下方程计算：</p>
 <script type="math/tex; mode=display">
@@ -204,7 +204,7 @@
 <p>$P_{r}$为普朗特数（不是<code>特朗普</code>，笑），计算：</p>
 <script type="math/tex; mode=display">
 P_r=\frac{\mu \cdot C_p}{\kappa}</script><p>参考：<a href="http://www.thermopedia.com/content/1053/" target="_blank" rel="noopener">http://www.thermopedia.com/content/1053/</a></p>
-<h3 id="phaseProperties"><a href="#phaseProperties" class="headerlink" title="phaseProperties"></a>phaseProperties</h3><p><code>massTransferModel</code>选用Lee模型，相变温度为646 K。为保证计算精度，<code>coefficient of mass transfer</code>传质系数设置为<code>1e6</code>^[2]^.</p>
+<h3 id="phaseProperties"><a href="#phaseProperties" class="headerlink" title="phaseProperties"></a>phaseProperties</h3><p><code>massTransferModel</code>选用Lee模型，相变温度为646 K。为保证计算精度，<code>coefficient of mass transfer</code>传质系数设置为<code>1e6</code>$^{[2]}$.</p>
 <h2 id="初始化与初始条件"><a href="#初始化与初始条件" class="headerlink" title="初始化与初始条件"></a>初始化与初始条件</h2><p>使用<code>swak4Foam</code>插件中的<code>funkySetFields -time 0</code>命令进行初始化。</p>
 <p>初始化的<code>liquid-gas</code>界面定义如下：</p>
 <script type="math/tex; mode=display">
