@@ -173,10 +173,7 @@
         <div class="post-content mx-auto" id="post">
           <div class="markdown-body">
             <h1 id="OpenFOAM学习笔记——Nusselt-number-努塞尔数"><a href="#OpenFOAM学习笔记——Nusselt-number-努塞尔数" class="headerlink" title="OpenFOAM学习笔记——Nusselt number 努塞尔数"></a>OpenFOAM学习笔记——Nusselt number 努塞尔数</h1><p><img src="/img/OpenFOAM学习笔记.png" srcset="/img/loading.gif" alt="OpenFOAM学习笔记"></p>
-<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>参考来源：</p>
-<p>[1] <a href="https://www.nuclear-power.net/nuclear-engineering/heat-transfer/introduction-to-heat-transfer/characteristic-numbers/what-is-nusselt-number/" target="_blank" rel="noopener">https://www.nuclear-power.net/nuclear-engineering/heat-transfer/introduction-to-heat-transfer/characteristic-numbers/what-is-nusselt-number/</a></p>
-<p>[2] <a href="https://www3.nd.edu/~sst/teaching/AME60634/lectures/AME60634_F13_lecture19.pdf" target="_blank" rel="noopener">https://www3.nd.edu/~sst/teaching/AME60634/lectures/AME60634_F13_lecture19.pdf</a></p>
-<p>$Nu_L$努塞尔数是一个无量纲数，用来描述流体内的<u><strong>热对流强度</strong></u>和<u><strong>热传导强度</strong></u>的比值。</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>$Nu_L$努塞尔数是一个无量纲数，用来描述流体内的<u><strong>热对流强度</strong></u>和<u><strong>热传导强度</strong></u>的比值。</p>
 <script type="math/tex; mode=display">
 Nu_L=\frac{convective~heat~transfer~(热对流强度)}{conductive~heat~transfer~(热传导强度)}=\frac{hL}{\kappa}</script><p>$\kappa$ — 流体的热传导率 [$W/m\cdot K$]</p>
 <p>$L$ — 特征长度 [$m$]</p>
@@ -239,7 +236,9 @@ Nu_L=\frac{hL}{\kappa}=0.037~Re^{\frac{4}{5}}\cdot Pr^{\frac{1}{3}}</script><ul>
 Nu_L=\frac{hL}{\kappa}=0.0296~Re^{\frac{4}{5}}\cdot Pr^{\frac{1}{3}}</script><h3 id="Internal-Turbulent-Flow-内部湍流"><a href="#Internal-Turbulent-Flow-内部湍流" class="headerlink" title="Internal Turbulent Flow 内部湍流"></a>Internal Turbulent Flow 内部湍流</h3><p>See also: <a href="https://www.nuclear-power.net/nuclear-engineering/heat-transfer/convection-convective-heat-transfer/dittus-boelter-equation/" target="_blank" rel="noopener">Dittus-Boelter Equation</a> , <a href="https://www.nuclear-power.net/nuclear-engineering/heat-transfer/convection-convective-heat-transfer/sieder-tate-equation/" target="_blank" rel="noopener">Sieder-Tate Equation</a></p>
 <p>适用情况：<u><strong>光滑</strong></u>圆管内充分发展的湍流，且加热面与流体存在较小温差。$Re&gt;10^4,~0.6\le Pr \le 160,~\frac{L}{D}&gt;10$</p>
 <script type="math/tex; mode=display">
-Nu_L=0.023~Re^{\frac{4}{5}}\cdot Pr^{\frac{2}{5}}</script>
+Nu_L=0.023~Re^{\frac{4}{5}}\cdot Pr^{\frac{2}{5}}</script><h1 id="参考来源"><a href="#参考来源" class="headerlink" title="参考来源"></a>参考来源</h1><p>[1] <a href="https://www.nuclear-power.net/nuclear-engineering/heat-transfer/introduction-to-heat-transfer/characteristic-numbers/what-is-nusselt-number/" target="_blank" rel="noopener">https://www.nuclear-power.net/nuclear-engineering/heat-transfer/introduction-to-heat-transfer/characteristic-numbers/what-is-nusselt-number/</a></p>
+<p>[2] <a href="https://www3.nd.edu/~sst/teaching/AME60634/lectures/AME60634_F13_lecture19.pdf" target="_blank" rel="noopener">https://www3.nd.edu/~sst/teaching/AME60634/lectures/AME60634_F13_lecture19.pdf</a></p>
+
             <hr>
           </div>
           <br>
