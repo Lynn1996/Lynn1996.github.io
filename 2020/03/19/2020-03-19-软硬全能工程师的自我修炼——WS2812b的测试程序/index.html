@@ -131,7 +131,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    363 字
+                    435 字
                   </span>&nbsp;
                 
 
@@ -173,6 +173,7 @@
         <div class="post-content mx-auto" id="post">
           <div class="markdown-body">
             <h1 id="软硬结合工程师的自我修炼——WS2812b的测试程序"><a href="#软硬结合工程师的自我修炼——WS2812b的测试程序" class="headerlink" title="软硬结合工程师的自我修炼——WS2812b的测试程序"></a>软硬结合工程师的自我修炼——WS2812b的测试程序</h1><p><img src="/img/软硬结合工程师的自我修炼/软硬结合工程师的自我修炼——WS2812b的测试程序.png" srcset="/img/loading.gif" alt="软硬结合工程师的自我修炼——WS2812b的测试程序"></p>
+<p>程序说明：按照锂电池电压大小设置呼吸灯速率。电压越大，呼吸速率越慢。</p>
 <pre><code class="lang-c">//======================================================================
 //
 //        Copyright (C) 2020 HKUST_AANTC
@@ -200,6 +201,8 @@
 #ifdef __AVR__
 #include &lt;avr/power.h&gt; // Required for 16 MHz Adafruit Trinket
 #endif
+
+#include &lt;Wire.h&gt;
 
 #define WS2812_PIN        13
 #define NUMPIXELS 1
@@ -244,22 +247,32 @@ ICACHE_RAM_ATTR void shutDown() {
 
 //--------------------------------setup-----------------------------------------------
 void setup() {
-  pinMode(SendCloseCommandPin, INPUT_PULLUP);
+  Serial.begin(500000);
+  //Serial.println();
+  Wire.begin();
+  pinMode(SendCloseCommandPin, OUTPUT);
+  digitalWrite(SendCloseCommandPin, HIGH);
   pinMode(InterruptPin, INPUT_PULLUP); //设置关断pin
   attachInterrupt(digitalPinToInterrupt(InterruptPin), shutDown, FALLING);//注册关断callback函数
   pixels.begin();
 }
-//--------------------------------main loop-----------------------------------------------
+//--------------------------------main loop----------------------------------------------
 void loop() {
+  float remainingBatteryCapacity = 0.005732 * analogRead(A0);  
+  uint8_t fadeSpeed = 50 * (1 - (4.28 - remainingBatteryCapacity) / (4.28 - 3.6));
+  Serial.print(remainingBatteryCapacity);
+  Serial.print(&quot;  &quot;);
+  Serial.println(fadeSpeed);
 
-  LED_FadeUp(255, 0, 0, 50, 100);
-  LED_FadeDown(255, 0, 0, 50, 100);
 
-  LED_FadeUp(0, 255, 0, 50, 100);
-  LED_FadeDown(0, 255, 0, 50, 100);
+  LED_FadeUp(255, 0, 0, fadeSpeed, 50);
+  LED_FadeDown(255, 0, 0, fadeSpeed, 50);
 
-  LED_FadeUp(0, 0, 255, 50, 100);
-  LED_FadeDown(0, 0, 255, 50, 100);
+  LED_FadeUp(0, 255, 0, fadeSpeed, 50);
+  LED_FadeDown(0, 255, 0, fadeSpeed, 50);
+
+  LED_FadeUp(0, 0, 255, fadeSpeed, 50);
+  LED_FadeDown(0, 0, 255, fadeSpeed, 50);
 
 }
 </code></pre>
