@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>ESP32关于1-bit模式SD卡报错，代码0x107解决方案</title>
+    <link href="/2022/01/25/ESP32%E5%85%B3%E4%BA%8E1-bit%E6%A8%A1%E5%BC%8FSD%E5%8D%A1%E6%8A%A5%E9%94%99%EF%BC%8C%E4%BB%A3%E7%A0%810x107%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <url>/2022/01/25/ESP32%E5%85%B3%E4%BA%8E1-bit%E6%A8%A1%E5%BC%8FSD%E5%8D%A1%E6%8A%A5%E9%94%99%EF%BC%8C%E4%BB%A3%E7%A0%810x107%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+    
+    <content type="html"><![CDATA[<h1 id="ESP32关于1-bit模式SD卡报错，代码0x107解决方案"><a href="#ESP32关于1-bit模式SD卡报错，代码0x107解决方案" class="headerlink" title="ESP32关于1-bit模式SD卡报错，代码0x107解决方案"></a>ESP32关于1-bit模式SD卡报错，代码0x107解决方案</h1><p>好久没更新了，随便更新一点。</p><p>最近玩ESP32做我的bikeSensor，想用SD卡存储数据，设计PCB的时候参考了这篇文章：<a href="https://www.instructables.com/Select-SD-Interface-for-ESP32/">https://www.instructables.com/Select-SD-Interface-for-ESP32/</a></p><p>我采用1-bit模式的SD卡，但是在arduino环境里初始化SD卡的时候遇到了如下的报错：</p><pre><code>sdmmc_cmd: sdmmc_card_init: send_op_cond (1) returned 0x107</code></pre><p>后来经过折腾发现：除了DATA3引脚需要上拉以外，<strong>1-bit模式下SD卡不需要其他的上拉电阻</strong>，而且D0连接到ESP32的GPIO2引脚后，会影响启动模式，只需要启动后使用内部上拉即可。</p><p>之前自己上网上查没有找到可用的解决方案，今天自己给解决了，所以写一下估计会有人遇到同样的问题吧。。。。。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>软硬全能工程师的自我修炼</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title></title>
     <link href="/2020/04/17/%E7%BB%99%E8%87%AA%E5%B7%B1%E6%8C%96%E5%9D%91%E2%80%94%E2%80%94%E6%89%93%E9%80%A0%E4%B8%80%E6%8A%8A%E4%BC%98%E8%81%94%E6%97%A0%E7%BA%BF%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98/"/>
     <url>/2020/04/17/%E7%BB%99%E8%87%AA%E5%B7%B1%E6%8C%96%E5%9D%91%E2%80%94%E2%80%94%E6%89%93%E9%80%A0%E4%B8%80%E6%8A%8A%E4%BC%98%E8%81%94%E6%97%A0%E7%BA%BF%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98/</url>

@@ -144,6 +144,48 @@
   <div class="row mb-4 mx-auto">
     
     
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2022/01/25/ESP32%E5%85%B3%E4%BA%8E1-bit%E6%A8%A1%E5%BC%8FSD%E5%8D%A1%E6%8A%A5%E9%94%99%EF%BC%8C%E4%BB%A3%E7%A0%810x107%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" target="_blank">
+          <img src="/img/ESP32-SD卡.png" srcset="/img/loading.gif" alt="ESP32关于1-bit模式SD卡报错，代码0x107解决方案" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2022/01/25/ESP32%E5%85%B3%E4%BA%8E1-bit%E6%A8%A1%E5%BC%8FSD%E5%8D%A1%E6%8A%A5%E9%94%99%EF%BC%8C%E4%BB%A3%E7%A0%810x107%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+        <p class="h4 index-header">ESP32关于1-bit模式SD卡报错，代码0x107解决方案</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">ESP32关于1-bit模式SD卡报错，代码0x107解决方案好久没更新了，随便更新一点。
+最近玩ESP32做我的bikeSensor，想用SD卡存储数据，设计PCB的时候参考了这篇文章：https://www.instructables.com/Select-SD-Interface-for-ESP32/
+我采用1-bit模式的SD卡，但是在arduino环境里初始化SD卡的时候遇到了如下的报错：
+sdmmc_cmd: sdmmc_card_init: send_op_cond (1) returned 0x107
+后来经过折腾发现：除了DATA3引脚需要上拉以外，1-bit模式下SD卡不需要其他的上拉电阻，而且D0连接到ESP32的GPIO2引脚后，会影响启动模式，只需要启动后使用内部上拉即可。
+之前自己上网上查没有找到可用的解决方案，今天自己给解决了，所以写一下估计会有人遇到同样的问题吧。。。。。
+</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2022-01-25&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/%E8%BD%AF%E7%A1%AC%E5%85%A8%E8%83%BD%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E7%82%BC">软硬全能工程师的自我修炼</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
     <div class="col-12 col-md-8 m-auto">
       <a href="/2020/04/17/%E7%BB%99%E8%87%AA%E5%B7%B1%E6%8C%96%E5%9D%91%E2%80%94%E2%80%94%E6%89%93%E9%80%A0%E4%B8%80%E6%8A%8A%E4%BC%98%E8%81%94%E6%97%A0%E7%BA%BF%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98/">
         <p class="h4 index-header"></p>
