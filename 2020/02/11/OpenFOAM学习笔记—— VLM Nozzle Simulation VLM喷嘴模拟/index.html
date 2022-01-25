@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="/lib/fancybox/jquery.fancybox.min.css"  >
 
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
 
 <body>
@@ -179,19 +179,19 @@
 \frac{1}{2}\rho_{water} {v_{in}}^2+P_{in}=\frac{1}{2}\rho_{vapor} {v_{out}}^2+P_{out}</script><script type="math/tex; mode=display">
 \rho_{water}\cdot A_{in}\cdot v_{in}=\rho_{vapor}\cdot A_{out}\cdot v_{out}</script><p>得$v_{in}&lt;&lt;1~m/s$</p>
 <h3 id="2-2-网格尺寸与Y-计算"><a href="#2-2-网格尺寸与Y-计算" class="headerlink" title="2.2 网格尺寸与Y+计算"></a>2.2 网格尺寸与Y+计算</h3><p>流动尺度较小，因此考虑选取所有网格厚度为Y+网格厚度。</p>
-<p>使用Y+计算器：<a href="https://www.pointwise.com/yplus/" target="_blank" rel="noopener">https://www.pointwise.com/yplus/</a></p>
+<p>使用Y+计算器：<a target="_blank" rel="noopener" href="https://www.pointwise.com/yplus/">https://www.pointwise.com/yplus/</a></p>
 <p>结算结果：</p>
 <p><img src="/img/VLM_Nozzle/Nozzle3.png" srcset="/img/loading.gif" alt="Nozzle1"></p>
 <p>近壁面第一层网格厚度应为 $\Delta S=12.86~\mu m$</p>
-<p>其中，对于截面为矩形且边长分别为 $a$ 和 $b$ 的管道，其内部流动的<strong>characteristic length 特征长度（或 <a href="https://en.wikipedia.org/wiki/Hydraulic_diameter" target="_blank" rel="noopener">hydraulic diameter 水力直径$D_h$</a>）</strong>$L_c$采用如下方式计算：</p>
+<p>其中，对于截面为矩形且边长分别为 $a$ 和 $b$ 的管道，其内部流动的<strong>characteristic length 特征长度（或 <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Hydraulic_diameter">hydraulic diameter 水力直径$D_h$</a>）</strong>$L_c$采用如下方式计算：</p>
 <script type="math/tex; mode=display">
 L_c=D_h=\frac{4A}{P}=\frac{4ab}{2(a+b)}=\frac{2ab}{a+b}\approx212~\mu m</script><p>或取$L_c=2a=224~\mu m$</p>
 <p>Reynolds Number 雷诺数 $Re$ 计算结果：</p>
 <script type="math/tex; mode=display">
-Re_x=\frac{\rho~U_{\infty} L_c}{\mu}=212</script><p>考虑截面的长宽比 $A = \frac{2000}{112} = 17.9 $ ，可将流动视为平行平板间流动，此时的误差仅为2~3%（参考来源：<a href="https://royalsocietypublishing.org/doi/10.1098/rspa.1928.0086" target="_blank" rel="noopener">S. J. Davies 1928</a> 和 <a href="https://pubs.acs.org/doi/pdf/10.1021/i160020a022" target="_blank" rel="noopener">RW Hanks 1966</a> ），此时流动状态为层流。(注：应参考微尺度下流动稳定性)</p>
+Re_x=\frac{\rho~U_{\infty} L_c}{\mu}=212</script><p>考虑截面的长宽比 $A = \frac{2000}{112} = 17.9 $ ，可将流动视为平行平板间流动，此时的误差仅为2~3%（参考来源：<a target="_blank" rel="noopener" href="https://royalsocietypublishing.org/doi/10.1098/rspa.1928.0086">S. J. Davies 1928</a> 和 <a target="_blank" rel="noopener" href="https://pubs.acs.org/doi/pdf/10.1021/i160020a022">RW Hanks 1966</a> ），此时流动状态为层流。(注：应参考微尺度下流动稳定性)</p>
 <h3 id="2-3-估算边界层厚度-delta-这一步好像没用）"><a href="#2-3-估算边界层厚度-delta-这一步好像没用）" class="headerlink" title="2.3 估算边界层厚度$\delta$ (这一步好像没用）"></a>2.3 估算边界层厚度$\delta$ (这一步好像没用）</h3><p>本节参考来源：</p>
-<p>[1] <a href="https://link.springer.com/content/pdf/10.1007%2F978-3-662-52919-5.pdf" target="_blank" rel="noopener">《BoundaryLayer Theory (Ninth Edition) - Hermann Schlichting》</a></p>
-<p>[2] <a href="http://farside.ph.utexas.edu/teaching/336L/Fluidhtml/node113.html" target="_blank" rel="noopener">Boundary Layer on a Flat Plate</a></p>
+<p>[1] <a target="_blank" rel="noopener" href="https://link.springer.com/content/pdf/10.1007%2F978-3-662-52919-5.pdf">《BoundaryLayer Theory (Ninth Edition) - Hermann Schlichting》</a></p>
+<p>[2] <a target="_blank" rel="noopener" href="http://farside.ph.utexas.edu/teaching/336L/Fluidhtml/node113.html">Boundary Layer on a Flat Plate</a></p>
 <p>所谓的边界层厚度 $\delta$ 指的是壁面到流速与主体流速 $U_{\infty}$ 相差不到1%的处流体层的厚度:</p>
 <script type="math/tex; mode=display">
 \delta=5.0\sqrt{\frac{\mu L_c}{\rho U_{\infty}}}=5.0\frac{L_c}{\sqrt{Re}}</script><p>H. Blasius (1908) 对平板层流边界层求得的精确解。</p>
@@ -214,7 +214,7 @@ Re_x=\frac{\rho~U_{\infty} L_c}{\mu}=212</script><p>考虑截面的长宽比 $A 
             
             </p>
             
-              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！评论系统采用disqus，国内用户可尝试科学上网。</p>
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！评论系统采用disqus，国内用户可尝试科学上网。</p>
             
           </div>
         </div>
@@ -257,7 +257,7 @@ Re_x=\frac{\rho~U_{\infty} L_c}{\mu}=212</script><p>考虑截面的长宽比 $A 
         (d.head || d.body).appendChild(s);
       };
     </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="nofollow noopener noopener">comments
+    <noscript>Please enable JavaScript to view the <a target="_blank" href="https://disqus.com/?ref_noscript" rel="nofollow noopener noopener">comments
         powered by Disqus.</a></noscript>
   </div>
 

@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="/lib/fancybox/jquery.fancybox.min.css"  >
 
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
 
 <body>
@@ -182,7 +182,7 @@
 <h2 id="Solver简介"><a href="#Solver简介" class="headerlink" title="Solver简介"></a>Solver简介</h2><blockquote>
 <p>Solver for N incompressible, non-isothermal immiscible fluids with phase-change, using VOF phase-fraction based interface capturing With optional mesh motion and mesh topology changes including adaptive re-meshing.</p>
 </blockquote>
-<p>参考来源：<a href="https://www.openfoam.com/documentation/guides/latest/man/icoReactingMultiphaseInterFoam.html" target="_blank" rel="noopener">https://www.openfoam.com/documentation/guides/latest/man/icoReactingMultiphaseInterFoam.html</a></p>
+<p>参考来源：<a target="_blank" rel="noopener" href="https://www.openfoam.com/documentation/guides/latest/man/icoReactingMultiphaseInterFoam.html">https://www.openfoam.com/documentation/guides/latest/man/icoReactingMultiphaseInterFoam.html</a></p>
 <h2 id="官方tutorial"><a href="#官方tutorial" class="headerlink" title="官方tutorial"></a>官方tutorial</h2><p><img src="/img/2DFilmBoiling/anime2.gif" srcset="/img/loading.gif" alt="anime2"></p>
 <h1 id="filmBoiling-2d-Case建立"><a href="#filmBoiling-2d-Case建立" class="headerlink" title="filmBoiling_2d Case建立"></a>filmBoiling_2d Case建立</h1><h2 id="Mesh的建立"><a href="#Mesh的建立" class="headerlink" title="Mesh的建立"></a>Mesh的建立</h2><p><img src="/img/2DFilmBoiling/schematic.png" srcset="/img/loading.gif" alt="schematic"></p>
 <p>Schematic diagram of problem geometry and boundary conditions$^{[1]}$.</p>
@@ -193,8 +193,8 @@
 <h2 id="热物理模型参数设置"><a href="#热物理模型参数设置" class="headerlink" title="热物理模型参数设置"></a>热物理模型参数设置</h2><h3 id="thermophysicalProperties"><a href="#thermophysicalProperties" class="headerlink" title="thermophysicalProperties"></a>thermophysicalProperties</h3><p>相关字典文件：<code>thermophysicalProperties.gas</code> ,<code>thermophysicalProperties.liquid</code></p>
 <p>本模拟工况为接近临界状态（Critical Pressure = 21.9 MPa, Saturation Temperature = 646 K）的水。</p>
 <blockquote>
-<p>水的临界压力计算：<a href="https://www.engineeringtoolbox.com/water-vapor-saturation-pressure-d_599.html" target="_blank" rel="noopener">https://www.engineeringtoolbox.com/water-vapor-saturation-pressure-d_599.html</a></p>
-<p><a href="https://baike.baidu.com/item/%E4%B8%B4%E7%95%8C%E7%8A%B6%E6%80%81/22830" target="_blank" rel="noopener">临界状态</a>（来源：百度百科）：使物质由气态变为液态的最高温度叫临界温度。每种物质都有一个特定的温度，在这个温度以上，无论怎样增大压力，气态物质都不会液化，这个温度就是临界温度，此时的压力为对应当前温度的<a href="https://baike.baidu.com/item/%E9%A5%B1%E5%92%8C%E8%92%B8%E6%B0%94%E5%8E%8B" target="_blank" rel="noopener">饱和蒸气压</a>，也被称为临界温度。</p>
+<p>水的临界压力计算：<a target="_blank" rel="noopener" href="https://www.engineeringtoolbox.com/water-vapor-saturation-pressure-d_599.html">https://www.engineeringtoolbox.com/water-vapor-saturation-pressure-d_599.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%B8%B4%E7%95%8C%E7%8A%B6%E6%80%81/22830">临界状态</a>（来源：百度百科）：使物质由气态变为液态的最高温度叫临界温度。每种物质都有一个特定的温度，在这个温度以上，无论怎样增大压力，气态物质都不会液化，这个温度就是临界温度，此时的压力为对应当前温度的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%A5%B1%E5%92%8C%E8%92%B8%E6%B0%94%E5%8E%8B">饱和蒸气压</a>，也被称为临界温度。</p>
 </blockquote>
 <p>此时的水和饱和蒸汽的物理属性如下$^{[1]}$：</p>
 <p><img src="/img/2DFilmBoiling/临界状态水的物理性质.png" srcset="/img/loading.gif" alt="临界状态水的物理性质"></p>
@@ -203,7 +203,7 @@
 \rho=\frac{p_{ref}}{RT}</script><p>其中 $p_{ref}= 1.3e6~N/m^2$，$R=8.134~J/(mol\cdot Kg)$</p>
 <p>$P_{r}$为普朗特数（不是<code>特朗普</code>，笑），计算：</p>
 <script type="math/tex; mode=display">
-P_r=\frac{\mu \cdot C_p}{\kappa}</script><p>参考：<a href="http://www.thermopedia.com/content/1053/" target="_blank" rel="noopener">http://www.thermopedia.com/content/1053/</a></p>
+P_r=\frac{\mu \cdot C_p}{\kappa}</script><p>参考：<a target="_blank" rel="noopener" href="http://www.thermopedia.com/content/1053/">http://www.thermopedia.com/content/1053/</a></p>
 <h3 id="phaseProperties"><a href="#phaseProperties" class="headerlink" title="phaseProperties"></a>phaseProperties</h3><p><code>massTransferModel</code>选用Lee模型，相变温度为646 K。为保证计算精度，<code>coefficient of mass transfer</code>传质系数设置为<code>1e6</code>$^{[2]}$.</p>
 <h2 id="初始化与初始条件"><a href="#初始化与初始条件" class="headerlink" title="初始化与初始条件"></a>初始化与初始条件</h2><p>使用<code>swak4Foam</code>插件中的<code>funkySetFields -time 0</code>命令进行初始化。</p>
 <p>初始化的<code>liquid-gas</code>界面定义如下：</p>
@@ -217,9 +217,9 @@ y=\frac{\lambda_0}{128}(4.0+ \cos\frac{2 \pi x}{\lambda_0})</script><p>初始化
 <p><img src="/img/2DFilmBoiling/filmBoiling2d.gif" srcset="/img/loading.gif" alt="filmBoiling2d"></p>
 <h1 id="讨论与分析"><a href="#讨论与分析" class="headerlink" title="讨论与分析"></a>讨论与分析</h1><p>待完成</p>
 <hr>
-<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>[1] Phase Change Heat Transfer Simulation for Boiling Bubbles Arising from a Vapor Film by the VOSET Method : <a href="https://www.tandfonline.xilesou.top/doi/abs/10.1080/10407782.2011.561079" target="_blank" rel="noopener">https://www.tandfonline.xilesou.top/doi/abs/10.1080/10407782.2011.561079</a></p>
-<p>[2] Lee 相变传质方程中传质系数取值的分析 : <a href="http://hit.alljournals.cn/hitxb_cn/ch/reader/create_pdf.aspx?file_no=20141203&amp;year_id=2014&amp;quarter_id=12&amp;falg=1" target="_blank" rel="noopener">http://hit.alljournals.cn/hitxb_cn/ch/reader/create_pdf.aspx?file_no=20141203&amp;year_id=2014&amp;quarter_id=12&amp;falg=1</a></p>
-<p>[3] A numerical investigation of the effect of surface wettability on the boiling curve ：<a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0187175" target="_blank" rel="noopener">https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0187175</a></p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>[1] Phase Change Heat Transfer Simulation for Boiling Bubbles Arising from a Vapor Film by the VOSET Method : <a target="_blank" rel="noopener" href="https://www.tandfonline.xilesou.top/doi/abs/10.1080/10407782.2011.561079">https://www.tandfonline.xilesou.top/doi/abs/10.1080/10407782.2011.561079</a></p>
+<p>[2] Lee 相变传质方程中传质系数取值的分析 : <a target="_blank" rel="noopener" href="http://hit.alljournals.cn/hitxb_cn/ch/reader/create_pdf.aspx?file_no=20141203&amp;year_id=2014&amp;quarter_id=12&amp;falg=1">http://hit.alljournals.cn/hitxb_cn/ch/reader/create_pdf.aspx?file_no=20141203&amp;year_id=2014&amp;quarter_id=12&amp;falg=1</a></p>
+<p>[3] A numerical investigation of the effect of surface wettability on the boiling curve ：<a target="_blank" rel="noopener" href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0187175">https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0187175</a></p>
 
             <hr>
           </div>
@@ -237,7 +237,7 @@ y=\frac{\lambda_0}{128}(4.0+ \cos\frac{2 \pi x}{\lambda_0})</script><p>初始化
             
             </p>
             
-              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！评论系统采用disqus，国内用户可尝试科学上网。</p>
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！评论系统采用disqus，国内用户可尝试科学上网。</p>
             
           </div>
         </div>
@@ -280,7 +280,7 @@ y=\frac{\lambda_0}{128}(4.0+ \cos\frac{2 \pi x}{\lambda_0})</script><p>初始化
         (d.head || d.body).appendChild(s);
       };
     </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="nofollow noopener noopener">comments
+    <noscript>Please enable JavaScript to view the <a target="_blank" href="https://disqus.com/?ref_noscript" rel="nofollow noopener noopener">comments
         powered by Disqus.</a></noscript>
   </div>
 
